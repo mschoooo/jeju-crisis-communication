@@ -41,6 +41,8 @@
 /* Targeted academic revision: preserve original design and figures. */
 .coding-examples{background:#f5f7f9;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:10px;padding:22px 26px;align-self:start}
 .coding-examples p+p{border-top:1px solid var(--line);padding-top:16px}
+.interpret-points{margin:0;padding-left:1.1em;font-size:27px;line-height:1.46}.interpret-points li{margin-bottom:18px}#slide-14 .interpret-column+.interpret-column{border-left:1px solid var(--line);padding-left:28px}
+@media(max-width:800px) and (orientation:portrait){.interpret-points{font-size:18px}#slide-14 .interpret-column+.interpret-column{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:20px}}
 @media(min-width:801px),(orientation:landscape),print{
 #slide-8 .body{margin-top:22px}#slide-8 .method-pipeline{padding-top:20px;padding-bottom:20px}#slide-8 .method-details p{line-height:1.35}#slide-8 .kappa{font-size:44px}#slide-8 .method-details .note{margin-top:8px}
 #slide-11 .tweet-link{margin-bottom:12px}#slide-11 .body>.note{margin-top:6px}#slide-11 .data-table th,#slide-11 .data-table td{padding-top:6px;padding-bottom:6px}#slide-11 .stack-row{margin-bottom:8px}#slide-11 .stack{height:46px}

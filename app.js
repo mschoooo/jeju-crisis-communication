@@ -58,6 +58,7 @@
       // Keep presentation instructions out of spoken content.
       const clean=meta.notes.replace('이 슬라이드 이후 별도의 방법론 슬라이드는 만들지 말 것. ','').replace('상세는 검증 메모.','').replace('그 비교는 다음 장.','');
       content=`<h3>${esc(meta.title)}</h3><p>${inline(clean)}</p><p class="small">근거 · ${esc(meta.evidence)}</p>${audits[current]?`<div class="audit"><b>수치·해석 주의사항</b><br>${esc(audits[current])}</div>`:''}`;
+      if(current===10)content+='<h3>전략별 건수·비중 · 원문 표8</h3>'+meta.tables.map(mdTable).join('');
     }else if(kind==='data'){
       title=`${String(current+1).padStart(2,'0')} · 원자료와 출처`;
       content=`${current===15?expoSources:''}<p><b>해당 슬라이드 근거</b> · ${esc(meta.evidence)}</p>${audits[current]?`<div class="audit">${esc(audits[current])}</div>`:''}${meta.tables.length?'<h3>원고에 수록된 표</h3>'+meta.tables.map(mdTable).join(''):'<p>이 슬라이드는 개념·맥락·논의를 요약한다. 수치가 있는 원표는 결과 슬라이드의 원자료 패널에서 확인할 수 있다.</p>'}${sources}`;

@@ -94,7 +94,6 @@
   html.push(slide(11,'10 / 관찰 결과 · RQ2-2','링크 내부에는 방어적 논리가 더 많았다','트위터 본문 n=122 / 링크 내부 n=76 · 원문 표8',`
     <div class="tweet-link"><div class="message-sheet"><div class="label">직접 메시지 · 트위터 본문</div><h3>짧은 첫 접점</h3><p>부인 4.1% · 책임성 회피 2.5%</p></div><div class="arrow">→</div><div class="message-sheet"><div class="label">클릭 이후 · 링크 내부</div><h3>상세한 입장 설명</h3><p>부인 <b class="orange">15.8%</b> · 책임성 회피 <b class="orange">11.8%</b></p></div></div>
     ${legend(cats,strategyColors)}${stack('트위터 본문',122,link.text.pct,cats,strategyColors)}${stack('링크 내부',76,link.link.pct,cats,strategyColors)}${scale()}
-    ${table(['구분','전략 부재','부인','책임성 회피','공격성 감소','수정행위'],[['본문 · 건',...link.text.counts],['링크 · 건',...link.link.counts]],'compact')}
     <div class="link-totals" style="margin-top:20px"><span>χ²(4) = 31.69, p &lt; .001</span><span>수정행위: 본문 0% / 링크 1.3%</span></div><p class="note">실제 링크 클릭·수용 효과는 측정하지 않았다.</p>`,
     '<em>저자 해석</em> · 링크 메시지는 직접 트윗보다 웹페이지적인 성격을 나타낸다.'));
   const appeal=D.table9_appeal_web_twitter, appealLink=D.table10_appeal_twitter_text_link;
@@ -111,18 +110,16 @@
     '트위터는 대부분의 전략에서 이성이 우세하지만, <em>공격성 감소는 감성 97건 대 이성 36건</em>이다.'));
   html.push(slide(14,'13 / 해석과 함의','수사적 완화와 실질적 공중 수용의 구별','관찰 결과 / 연구자 해석 / 발제자 비평',`
     <div class="interpret"><div class="interpret-column"><div class="label">01 · 관찰 결과</div><h3>매체별 분포 차이</h3>
-      <p><b>웹페이지</b><br>부인·책임 회피가 상대적으로 많고 이성적 소구가 우세</p>
-      <p><b>트위터</b><br>공격성 감소·감성적 소구가 상대적으로 두드러짐</p>
-      <p><b>링크 내부</b><br>상대적으로 이성적·방어적인 메시지</p></div>
+      <p><b>웹페이지</b><br>상대적으로 부인·책임 회피가 많음<br>이성적 소구 우세</p>
+      <p><b>트위터</b><br>공격성 감소·감성적 소구 두드러짐</p>
+      <p><b>링크 내부</b><br>상대적으로 이성적·방어적</p></div>
     <div class="interpret-column"><div class="label">02 · 연구자의 해석</div><h3>상대적 공중 순응</h3>
-      <p>저자는 트위터가 웹페이지보다 <b>상대적으로 공중 순응적</b>이었다고 해석했다.</p>
-      <p>정책 철회의 어려움, 웹의 공식 정보 제공, 트위터의 상호작용·확산 특성으로 분포 차이를 설명했다.</p>
-      <p>링크는 단문의 제약을 보완하는 통로로 해석했다.</p></div>
+      <ul class="interpret-points"><li>트위터: 웹보다 <b>상대적 공중 순응</b></li><li>분포 차이: 정책 철회 제약·매체 특성<br><span class="small">웹의 공식성 / 트위터의 상호작용·확산</span></li><li>링크: 단문의 제약 보완</li></ul></div>
     <div class="interpret-column"><div class="label">03 · 발제자의 비평</div><h3>수사 ≠ 정책·행동 변화</h3>
-      <p><b>공격성 감소</b><br>부정적 평가·비난을 완화하는 수사.<br>비난자 공격·최소화·초월 등<br><b>조직 옹호적 하위 전략도 포함</b></p>
-      <p><b>실질적 공중 수용</b><br>공중의 요구를 받아들여<br>정책이나 행동을 변경하는 것</p>
+      <p><b>공격성 감소</b><br>부정적 평가·비난 완화<br>비난자 공격·최소화·초월 등<br><b>조직 옹호 전략도 포함</b></p>
+      <p><b>실질적 공중 수용</b><br>공중의 요구를 반영한<br>정책·행동 변화</p>
       </div></div>
-    <div class="caution"><b>원문의 실무 제언</b> · 매체별 차별화 / 링크를 통한 균형 / 위기 이전 관계관리<br><b>인과 추론의 경계</b> · 매체와 전략의 연관성이 매체 자체의 인과효과를 확정하지는 않는다.</div>`,
+    <div class="caution"><b>실무 제언</b> · 매체별 차별화 / 링크로 균형 / 위기 이전 관계관리<br><b>인과 추론의 경계</b> · 매체·전략의 연관성 ≠ 매체 자체의 인과효과</div>`,
     '공격성 감소의 높은 비중을 <em>실제 주민 요구의 수용이나 정책 변화</em>로 해석해서는 안 된다.'));
   html.push(slide(15,'14 / 결론과 연구의 한계','매체별 메시지의 차이와 남은 질문','관찰한 것은 전략·소구의 분포 차이이며, 이미지 회복 효과는 직접 검증하지 않았다.',`
     <div class="conclusions"><div><span>01 · 웹페이지</span><p>부인·책임 회피와 이성적 소구가 상대적으로 많이 관찰됐다.</p></div><div><span>02 · 트위터와 링크</span><p>트위터는 공격성 감소·감성적 소구, 링크는 상대적으로 이성적·방어적인 메시지가 두드러졌다.</p></div><div><span>03 · 메시지 조합</span><p>위기 커뮤니케이션은 매체에 따른 전략과 소구 방식의 조합을 고려해야 한다.</p></div></div>
