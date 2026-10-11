@@ -39,6 +39,8 @@
 @media print{@page{size:20in 11.25in;margin:0}body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}#viewport{height:auto;display:block;overflow:visible}#stage{transform:none;width:1920px;height:auto}.slide,.slide.active{display:flex!important;flex-direction:column;position:relative;height:1080px;break-after:page;page-break-after:always}.slide:last-child{break-after:auto}nav.toolbar,.progress,dialog,.skip{display:none!important}.data-bar{transform:none!important;opacity:1!important}}
 
 /* Targeted academic revision: preserve original design and figures. */
+.coding-examples{background:#f5f7f9;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:10px;padding:22px 26px;align-self:start}
+.coding-examples p+p{border-top:1px solid var(--line);padding-top:16px}
 @media(min-width:801px),(orientation:landscape),print{
 #slide-8 .body{margin-top:22px}#slide-8 .method-pipeline{padding-top:20px;padding-bottom:20px}#slide-8 .method-details p{line-height:1.35}#slide-8 .kappa{font-size:44px}#slide-8 .method-details .note{margin-top:8px}
 #slide-11 .tweet-link{margin-bottom:12px}#slide-11 .body>.note{margin-top:6px}#slide-11 .data-table th,#slide-11 .data-table td{padding-top:6px;padding-bottom:6px}#slide-11 .stack-row{margin-bottom:8px}#slide-11 .stack{height:46px}

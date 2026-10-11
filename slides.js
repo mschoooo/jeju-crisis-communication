@@ -57,11 +57,11 @@
       ['공격성의 감소 · 6','강화 · 최소화 · 차별화<br>초월 · 비난자 공격 · 보상','부정적 평가를 완화'],
       ['수정행위 · 1','수정행위','해결·재발 방지 계획'],
       ['굴욕 · 1','굴욕 / 사과','잘못·책임 인정, 사과']],'theory-table')}</div>
-      <div class="coding-examples"><h3>표3의 실제 사례 <span>의미 요약</span></h3>
+      <aside class="coding-examples" aria-label="전략별 코딩 사례"><h3>전략별 코딩 사례<br><span>논문 표3 · 의미 요약</span></h3>
         <p><b>부인</b>해군은 공사를 일시 중단하겠다고 언급한 사실이 없다고 밝힘.</p>
         <p><b>공격성 감소</b>붉은발말똥게 이식에 관한 반대 측 주장을 ‘허위’라고 반박.</p>
         <p><b>수정행위</b>국방부는 검토 결과 보완할 사항이 있다면 적극 반영할 방침이라고 밝힘.</p>
-      </div></div>`,
+      </aside></div>`,
     '‘공격성 감소’는 <em>비난·부정적 인식을 완화하는 수사</em>다. 사례는 발신자의 주장을 요약한 것이다.'));
   html.push(slide(6,'05 / 이론 ②','소구유형: 이성과 감성','이미지 회복 전략과 별도로 코딩하는 설득의 표현 방식',`
     <div class="two"><div class="appeal-def rule-top"><div class="label">RATIONAL APPEAL</div><h3>이성적 소구</h3><p class="definition">구체적인 정보와 인과관계로 설명</p><p>사실 · 절차 · 수치 · 논거</p><div class="example"><span class="small">논문 표4 예시의 의미 요약</span><br>환경영향평가서에 보존·저감책이 있음을 들어 사실관계를 반박</div></div><div class="appeal-def rule-top orange-rule"><div class="label">EMOTIONAL APPEAL</div><h3 class="orange">감성적 소구</h3><p class="definition">이미지와 정서로 연민·공감을 환기</p><p>미래 이미지 · 정서적 공감 · 기대</p><div class="example"><span class="small">논문 표4 예시의 의미 요약</span><br>벚꽃·유채꽃과 어우러진 해군기지의 아름다운 미래를 기대하도록 묘사</div></div></div>
