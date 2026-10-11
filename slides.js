@@ -16,7 +16,7 @@
     const ph=h-top-bottom,pw=w-left-right,step=pw/labels.length,bw=compact?35:65;
     let s=`<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="${labels.map((l,i)=>`${l}: ${names[0]} ${a[i]}${pct?'%':'건'}, ${names[1]} ${b[i]}${pct?'%':'건'}`).join('; ')}"><title>${names.join(' / ')} 비교</title>`;
     for(let v=0;v<=max;v+=max/4){let y=top+ph*(1-v/max);s+=`<line class="gridline" x1="${left}" x2="${w-right}" y1="${y}" y2="${y}"/><text class="tick" x="${left-13}" y="${y+8}" font-size="${compact?20:24}" text-anchor="end">${v}${pct?'%':''}</text>`;}
-    labels.forEach((l,i)=>{let cx=left+step*(i+.5);[a,b].forEach((arr,j)=>{let v=arr[i],bh=ph*v/max,x=cx+(j===0?-bw-4:4),y=top+ph-bh;s+=`<rect class="data-bar" x="${x}" y="${y}" width="${bw}" height="${bh}" fill="${j===0?navy:orange}"/><text x="${x+bw/2}" y="${y-11}" font-size="${compact?23:27}" font-weight="650" text-anchor="middle">${pct?v.toFixed(1):v}</text>`;});s+=`<text x="${cx}" y="${h-25}" font-size="${compact?21:26}" text-anchor="middle">${l}</text>`;});
+    labels.forEach((l,i)=>{let cx=left+step*(i+.5);[a,b].forEach((arr,j)=>{let v=arr[i],bh=ph*v/max,x=cx+(j===0?-bw-4:4),y=top+ph-bh;s+=`<rect class="data-bar" x="${x}" y="${y}" width="${bw}" height="${bh}" fill="${j===0?navy:orange}"/><text class='value-label' x="${x+bw/2}" y="${y-11}" font-size="${compact?23:27}" font-weight="650" text-anchor="middle">${pct?v.toFixed(1):v}</text>`;});s+=`<text x="${cx}" y="${h-25}" font-size="${compact?21:26}" text-anchor="middle">${l}</text>`;});
     return s+'</svg>';
   }
   function slide(n,section,title,subtitle,body,takeaway,cls='') {

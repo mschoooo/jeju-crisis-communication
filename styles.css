@@ -39,6 +39,7 @@
 @media print{@page{size:20in 11.25in;margin:0}body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}#viewport{height:auto;display:block;overflow:visible}#stage{transform:none;width:1920px;height:auto}.slide,.slide.active{display:flex!important;flex-direction:column;position:relative;height:1080px;break-after:page;page-break-after:always}.slide:last-child{break-after:auto}nav.toolbar,.progress,dialog,.skip{display:none!important}.data-bar{transform:none!important;opacity:1!important}}
 
 /* Targeted academic revision: preserve original design and figures. */
+@media print{.stack,.value-label,.data-table tbody tr,.metric-line,.cross-focus,.link-totals,.kappa,.method-pipeline strong,.expo-context{clip-path:none!important;opacity:1!important;transform:none!important}}
 .coding-examples{background:#f5f7f9;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:10px;padding:22px 26px;align-self:start}
 .coding-examples p+p{border-top:1px solid var(--line);padding-top:16px}
 .interpret-points{margin:0;padding-left:1.1em;font-size:27px;line-height:1.46}.interpret-points li{margin-bottom:18px}#slide-14 .interpret-column+.interpret-column{border-left:1px solid var(--line);padding-left:28px}
