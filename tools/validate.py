@@ -1,4 +1,4 @@
-﻿"""Browser QA: content integrity, all slides, interactions, responsive and offline."""
+"""Browser QA: content integrity, all slides, interactions, responsive and offline."""
 import json
 from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw
@@ -17,18 +17,18 @@ with sync_playwright() as p:
     response=page.goto('http://127.0.0.1:8765',wait_until='networkidle')
     assert response.status==200
     page.evaluate('document.fonts.ready')
-    assert page.locator('.slide').count()==15
+    assert page.locator('.slide').count()==16
     assert page.evaluate('typeof window.anime')=='function'
     assert page.evaluate('document.fonts.check("30px Pretendard")')
     assert page.evaluate('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)')
-    report['checks'].extend(['15 slides','anime.js loaded locally','local Korean font loaded','both historical photos loaded'])
+    report['checks'].extend(['16 slides','anime.js loaded locally','local Korean font loaded','both historical photos loaded'])
     # Check every source-data transcription against the user-provided master JSON.
     import re
     master=(ROOT.parent/'jeju_seal.md').read_text(encoding='utf-8')
     expected=json.loads(re.search(r'```json\s*([\s\S]*?)```',master).group(1))
     assert page.evaluate('window.RESEARCH_DATA')==expected
     report['checks'].append('All table 5–11 values equal master JSON, including n and statistical tests')
-    for i in range(15):
+    for i in range(16):
         page.evaluate('(i)=>window.deck.go(i,false)',i)
         page.wait_for_timeout(60)
         # Visible content must stay above takeaway and footer; inspect leaves for clipping.
@@ -48,8 +48,8 @@ with sync_playwright() as p:
     # Interaction tests: navigation, anchors, dialogs, focus, source tables, keyboard boundaries.
     page.keyboard.press('Home'); assert page.evaluate('deck.index()')==0
     page.keyboard.press('ArrowRight'); assert page.evaluate('deck.index()')==1
-    page.keyboard.press('End'); assert page.evaluate('deck.index()')==14
-    page.keyboard.press('ArrowRight'); assert page.evaluate('deck.index()')==14
+    page.keyboard.press('End'); assert page.evaluate('deck.index()')==15
+    page.keyboard.press('ArrowRight'); assert page.evaluate('deck.index()')==15
     page.keyboard.press('g'); assert page.locator('#panel').evaluate('(d)=>d.open')
     page.locator('[data-goto="11"]').click(); assert page.evaluate('deck.index()')==11
     page.keyboard.press('d'); assert page.locator('#panel-body table').count()==2
@@ -64,12 +64,12 @@ with sync_playwright() as p:
     page.screenshot(path=str(QA/'laptop.png'))
     report['checks'].append('1366×768 laptop fits')
     page.set_viewport_size({'width':390,'height':844})
-    for i in range(15):
+    for i in range(16):
         page.evaluate('(i)=>deck.go(i,false)',i)
         page.wait_for_timeout(30)
         result=page.evaluate('''() => ({slide:deck.index()+1,width:document.documentElement.scrollWidth,viewport:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth+1})''')
         report['mobile'].append(result)
-        if i in [0,1,4,8,11,12,14]:page.screenshot(path=str(QA/f'mobile-{i+1:02}.png'),full_page=True)
+        if i in [0,1,4,7,8,10,11,12,13,14,15]:page.screenshot(path=str(QA/f'mobile-{i+1:02}.png'),full_page=True)
     page.keyboard.press('d');page.screenshot(path=str(QA/'mobile-panel.png'));page.keyboard.press('Escape')
     # Landscape mobile is a fitted 16:9 presentation.
     page.set_viewport_size({'width':844,'height':390})
@@ -78,10 +78,10 @@ with sync_playwright() as p:
     # File mode + network disabled ensures assets work without a CDN or a server.
     offline=browser.new_context(viewport={'width':1920,'height':1138},offline=True,reduced_motion='reduce')
     op=offline.new_page();op.goto((ROOT/'index.html').as_uri());op.evaluate('document.fonts.ready')
-    assert op.locator('.slide').count()==15
+    assert op.locator('.slide').count()==16
     assert op.evaluate('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)')
     assert op.evaluate('typeof window.anime')=='function'
-    op.keyboard.press('End');assert op.evaluate('deck.index()')==14
+    op.keyboard.press('End');assert op.evaluate('deck.index()')==15
     report['checks'].append('file:// offline: local scripts, font, photos and navigation')
     # Animation enabled: final geometry and visibility after a real transition.
     animated=browser.new_context(viewport={'width':1920,'height':1138})
@@ -94,11 +94,11 @@ with sync_playwright() as p:
 
 # Contact sheet for human visual inspection. Source photos are not modified.
 thumbs=[]
-for i in range(1,16):
+for i in range(1,17):
     im=Image.open(QA/f'slide-{i:02}.png').convert('RGB');im.thumbnail((576,324))
     tile=Image.new('RGB',(600,360),'#dce2e8');tile.paste(im,((600-im.width)//2,12))
-    ImageDraw.Draw(tile).text((16,340),f'{i:02} / 15',fill='#142b46');thumbs.append(tile)
-sheet=Image.new('RGB',(1800,1800),'#dce2e8')
+    ImageDraw.Draw(tile).text((16,340),f'{i:02} / 16',fill='#142b46');thumbs.append(tile)
+sheet=Image.new('RGB',(1800,2160),'#dce2e8')
 for i,t in enumerate(thumbs):sheet.paste(t,((i%3)*600,(i//3)*360))
 sheet.save(QA/'contact-sheet.jpg',quality=93)
 (QA/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

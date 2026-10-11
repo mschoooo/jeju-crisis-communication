@@ -1,0 +1,1 @@
+﻿16-slide revision complete. Browser QA passed on 2026-10-11: source-data integrity, all desktop slides without clipping or collisions, mobile, keyboard/dialog controls, offline assets, and animation. PDF regenerated and verified. Deploy via GitHub Pages main branch.

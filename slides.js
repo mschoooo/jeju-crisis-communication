@@ -20,25 +20,25 @@
     return s+'</svg>';
   }
   function slide(n,section,title,subtitle,body,takeaway,cls='') {
-    return `<section class="slide ${cls}" id="slide-${n}" aria-label="${n} / 15 ${title.replace(/<[^>]*>/g,'')}" data-title="${window.SLIDE_META[n-1].title}">
+    return `<section class="slide ${cls}" id="slide-${n}" aria-label="${n} / 16 ${title.replace(/<[^>]*>/g,'')}" data-title="${window.SLIDE_META[n-1].title}">
       <div class="eyebrow"><span>${section}</span><span>JEJU NAVAL BASE · CRISIS COMMUNICATION</span></div>
       <h2>${title}</h2>${subtitle?`<p class="subtitle">${subtitle}</p>`:''}<div class="body">${body}</div>
-      <p class="takeaway">${takeaway}</p><footer class="foot"><span>${window.SLIDE_META[n-1].evidence}</span><span class="num">${String(n).padStart(2,'0')} / 15</span></footer></section>`;
+      <p class="takeaway">${takeaway}</p><footer class="foot"><span>${window.SLIDE_META[n-1].evidence}</span><span class="num">${String(n).padStart(2,'0')} / 16</span></footer></section>`;
   }
   const html=[];
-  html.push(`<section class="slide cover" id="slide-1" aria-label="1 / 15 표지" data-title="표지">
+  html.push(`<section class="slide cover" id="slide-1" aria-label="1 / 16 표지" data-title="표지">
     <div class="eyebrow"><span>위기 커뮤니케이션 · 논문 발제</span><span>2013 RESEARCH</span></div>
     <div class="cover-copy"><h1><span>웹페이지와 트위터 메시지에 나타난</span>이미지 회복 전략<br>비교연구</h1><p class="cover-sub">제주 해군기지 건설 사례를 중심으로</p>
     <p class="cover-meta">남성주·황성욱 (2013)<br>『방송과 커뮤니케이션』 14권 2호<br>발제 · 조민성</p>
     <p class="cover-question">같은 위기에서도 매체가 달라지면<br>조직의 대응 메시지는 달라지는가?</p></div>
     <img class="cover-image" src="assets/gangjeong-2012.jpg" alt="2012년 5월 2일 제주 해군기지 완공 이전 강정 해안의 풍경"><div class="image-shade"></div><div class="photo-credit">${credit('coast')}</div>
-    <footer class="foot"><span>주논문 표지·초록 · 메시지 내용분석 연구</span><span class="num">01 / 15</span></footer></section>`);
+    <footer class="foot"><span>주논문 표지·초록 · 메시지 내용분석 연구</span><span class="num">01 / 16</span></footer></section>`);
   html.push(slide(2,'01 / 사건 맥락','제주 해군기지 건설을 둘러싼 갈등','안보 · 의사결정 절차 · 환경 · 평화 정체성이 교차한 공공갈등',`
     <div class="case-grid"><div><img class="case-photo" src="assets/protest-2012.jpg" alt="2012년 5월 1일 제주상공회의소 앞 제주 해군기지 건설 반대 시위"><p class="note">${credit('protest')}</p></div><div><div class="case-arguments"><div class="rule-top"><h3>사업 추진 측</h3><p>남방 해역 해양안보<br>군항 확보<br>민군복합형 관광미항을 통한 지역발전 기대</p></div><div class="rule-top orange-rule"><h3>반대 측</h3><p>주민 의견 수렴·절차 문제<br>환경 훼손 우려<br>제주의 평화 정체성과 긴장</p></div></div><p class="stakeholders"><b>갈등 주체</b> 해군·국방부·정부 ↔ 반대 주민·시민사회<br><b>메시지 수용자</b> 일반 국민·독자<br><span class="small">외부 연구: 중앙정부·주민 사이 지방정부의 역할에도 주목 [E1·E2].</span></p></div></div>
     <div class="timeline">${[['1993','해군기지 소요 제기'],['2007','강정 후보지 선정<br>주민 갈등 본격화'],['2010','항만 공사 착수'],['2012.03','구럼비 발파<br>충돌 확대'],['2012.07','건설 승인 적법 판단<br><small>메시지 수집 이후</small>'],['2016.02','준공식<br><small>연구 이후 참고</small>']].map((e,i)=>`<div class="event ${i>=4?'after':''}"><strong>${e[0]}</strong><p>${e[1]}</p></div>`).join('')}</div>`,
     '분석한 메시지는 <em>2012년 6월까지</em>다. 법적 판단을 사회적 갈등의 종료와 동일시할 수 없다.'));
   html.push(slide(3,'02 / 문제 제기','왜 매체를 비교하는가?','동일한 위기에서 이미지 회복 전략과 소구유형을 함께 비교',`
-    <div class="research-flow"><div class="flow-old"><div class="label">기존 연구의 주된 접근</div><h3>조직 · 단일 사건 · 동일 매체</h3><p>사례 → 이미지 회복 전략 분류</p><p class="research-gap">온라인 매체는 정보량, 상호작용 속도,<br>확산 방식과 이용 목적이 다르다.</p></div><div class="flow-new"><div class="label">이 연구의 비교 설계</div><h3>동일 위기 · 제주 해군기지</h3><div class="flow-pair"><div class="flow-node navy">공식 웹페이지</div><div class="flow-node orange">트위터</div></div><div class="flow-arrow">↓</div><div class="flow-bottom">이미지 회복 전략 <span class="orange">×</span> 소구유형</div><p class="small" style="margin-top:18px">PR의 수사 전략 + 광고학의 설득 표현</p></div></div>
+    <div class="research-flow"><div class="flow-old"><div class="label">기존 연구의 주된 접근</div><h3>특정 조직과 위기사례</h3><p>사용한 이미지 회복 전략을 주로 분석</p><p class="research-gap">온라인 매체는 정보량, 상호작용 속도,<br>확산 방식과 이용 목적이 다르다.</p></div><div class="flow-new"><div class="label">이 연구의 비교 설계</div><h3>동일 위기 · 제주 해군기지</h3><div class="flow-pair"><div class="flow-node navy">공식 웹페이지</div><div class="flow-node orange">트위터</div></div><div class="flow-arrow">↓</div><div class="flow-bottom">이미지 회복 전략 <span class="orange">×</span> 소구유형</div><p class="small" style="margin-top:18px">서로 다른 매체의 전략과 소구유형을 함께 비교</p></div></div>
     <p class="stat">연구 공백 · 같은 사건에서 두 매체의 전략과 소구를 결합해 비교한 연구가 부족했다.</p>`,
     '위기 대응에서는 <em>무슨 말을 하는가</em>와 함께 <em>어떤 매체에서 말하는가</em>를 살펴야 한다.'));
   html.push(slide(4,'03 / 매체의 특성','공식 웹페이지와 2012년의 트위터','원문 표1 재구성 · 선행연구가 제시한 상대적 특성',`
@@ -49,16 +49,20 @@
       ['PR 활용 목적','공식 정보 제공과 입장 표명<br>조직 PR의 중심 채널','소통·관계관리 중심<br>상대적으로 보조 채널']])}
     <div class="two" style="margin-top:27px"><p><b>웹페이지</b> · 공식성 / 설명 / 이성</p><p class="orange"><b>트위터</b> · 즉시성 / 확산 / 감성</p></div><p class="note">140자는 연구 당시 기술적 조건이다. 현재의 X 환경에 그대로 적용하지 않는다.</p>`,
     '웹페이지는 <em>공식 정보 제공</em>, 트위터는 <em>빠른 상호작용과 관계관리</em>의 채널로 개념화됐다.'));
-  html.push(slide(5,'04 / 이론 ①','베노이트의 이미지 회복 전략','Benoit (1995) · 조직이 책임·피해·행동에 대응하는 수사적 유형',`
-    <div class="theory-intro"><p>이미지는 실제 사실뿐 아니라 <b>공중이 믿는 책임과 평가</b>에 의해서도 훼손된다.<br>따라서 조직은 공중의 인식에도 대응한다.</p><div class="count-equation">5대전략 / 14하위전략</div></div>
-    ${table(['대전략','하위 전략','핵심 대응'],[
-      ['부인 <small>Denial · 2</small>','단순 부인 · 책임 전가','사건 또는 자신의 행위·책임을 부인'],
-      ['책임성의 회피 <small>Evading Responsibility · 4</small>','도발 · 불가피성 · 사고 · 좋은 의도','조직의 책임 정도를 줄이는 해명'],
-      ['공격성의 감소 <small>Reducing Offensiveness · 6</small>','강화 · 최소화 · 차별화 · 초월<br>비난자 공격 · 보상','부정적 평가를 줄이도록 재해석'],
-      ['수정행위 <small>Corrective Action · 1</small>','수정행위','문제 해결·재발 방지 계획 제시'],
-      ['굴욕 <small>Mortification · 1</small>','굴욕 / 사과','잘못과 책임을 인정하고 사과']],'theory-table')}
-    <p class="note">2 + 4 + 6 + 1 + 1 = 14 · 이 연구는 코딩 범주에 ‘전략 부재’를 별도로 추가한다.</p>`,
-    '‘공격성의 감소’는 <em>비난·부정적 인식을 낮추려는 수사</em>이며, 실제 요구의 수용과는 구별된다.'));
+  html.push(slide(5,'04 / 이론 ①','베노이트의 이미지 회복 전략','5대전략 · 14하위전략과 실제 메시지의 코딩 사례',`
+    <div class="theory-intro"><p>조직은 실제 사실뿐 아니라 <b>공중이 믿는 책임과 평가</b>에도 대응한다.</p></div>
+    <div class="theory-with-examples"><div>${table(['대전략','하위 전략','핵심 대응'],[
+      ['부인 · 2','단순 부인 · 책임 전가','행위·책임을 부인'],
+      ['책임성의 회피 · 4','도발 · 불가피성<br>사고 · 좋은 의도','책임 정도를 줄임'],
+      ['공격성의 감소 · 6','강화 · 최소화 · 차별화<br>초월 · 비난자 공격 · 보상','부정적 평가를 완화'],
+      ['수정행위 · 1','수정행위','해결·재발 방지 계획'],
+      ['굴욕 · 1','굴욕 / 사과','잘못·책임 인정, 사과']],'theory-table')}</div>
+      <div class="coding-examples"><h3>표3의 실제 사례 <span>의미 요약</span></h3>
+        <p><b>부인</b>해군은 공사를 일시 중단하겠다고 언급한 사실이 없다고 밝힘.</p>
+        <p><b>공격성 감소</b>붉은발말똥게 이식에 관한 반대 측 주장을 ‘허위’라고 반박.</p>
+        <p><b>수정행위</b>국방부는 검토 결과 보완할 사항이 있다면 적극 반영할 방침이라고 밝힘.</p>
+      </div></div>`,
+    '‘공격성 감소’는 <em>비난·부정적 인식을 완화하는 수사</em>다. 사례는 발신자의 주장을 요약한 것이다.'));
   html.push(slide(6,'05 / 이론 ②','소구유형: 이성과 감성','이미지 회복 전략과 별도로 코딩하는 설득의 표현 방식',`
     <div class="two"><div class="appeal-def rule-top"><div class="label">RATIONAL APPEAL</div><h3>이성적 소구</h3><p class="definition">구체적인 정보와 인과관계로 설명</p><p>사실 · 절차 · 수치 · 논거</p><div class="example"><span class="small">논문 표4 예시의 의미 요약</span><br>환경영향평가서에 보존·저감책이 있음을 들어 사실관계를 반박</div></div><div class="appeal-def rule-top orange-rule"><div class="label">EMOTIONAL APPEAL</div><h3 class="orange">감성적 소구</h3><p class="definition">이미지와 정서로 연민·공감을 환기</p><p>미래 이미지 · 정서적 공감 · 기대</p><div class="example"><span class="small">논문 표4 예시의 의미 요약</span><br>벚꽃·유채꽃과 어우러진 해군기지의 아름다운 미래를 기대하도록 묘사</div></div></div>
     <div class="formula"><span>매체 유형</span><span>→</span><b>주장 내용 <span class="orange">×</span> 설득 표현</b><span class="small">전략 × 소구</span></div>`,
@@ -73,7 +77,7 @@
     '분포를 살핀 뒤 <em>매체 간 차이 → 링크의 역할 → 전략과 소구의 결합</em>을 분석한다.'));
   html.push(slide(8,'07 / 연구방법','게시글이 아닌 ‘주제’를 분석 단위로','양적 내용분석 · 웹페이지 ‘사실은 이렇습니다’ / 트위터 @thejejuNbase',`
     <div class="method-pipeline"><div><h3><strong>76</strong> 웹 게시글<br><strong class="orange">117</strong> 트위터 포스팅</h3><p>원자료 수집</p></div><span class="arrow">→</span><div><h3>주제 추출</h3><p>의미가 일관된<br>메시지 부분 · theme</p></div><span class="arrow">→</span><div><h3>전략 · 소구 코딩</h3><p>5대전략 + 전략 부재<br>14하위전략 / 이성·감성<br>매체 / 본문·링크 구분</p></div><span class="arrow">→</span><div><h3>매체 간 비교</h3><p>교차분석<br>카이제곱 검정<br>SPSS 18.0</p></div></div>
-    <div class="method-details"><div><h3>자료 수집 기간</h3><p><b>웹페이지</b><br>2010.03.20–2012.06.12<br><b>트위터</b><br>2012.03.12–2012.06.12</p></div><div><h3>코딩 단위와 표본</h3><p>방법 절: 웹 153 · 트위터 197 주제<br>여러 결과 표: 트위터 198 주제<br><b>각 표의 n을 개별적으로 유지</b></p><p class="note">전체 웹 분포와 동일 기간의 비교 표본은 다르다.</p></div><div><h3>Cohen’s κ</h3><div class="kappa">.98 <span class="small">전략</span><br>.85 <span class="small">소구</span></div><p class="note">전체의 10%로 공동 코딩 훈련</p></div></div>`,
+    <p class="theme-explanation">하나의 게시글에 서로 다른 주장이 포함되면 <b>각각을 별도 주제로 코딩</b>할 수 있다.</p><div class="method-details"><div><h3>자료 수집 기간</h3><p><b>웹페이지</b><br>2010.03.20–2012.06.12<br><b>트위터</b><br>2012.03.12–2012.06.12</p></div><div><h3>코딩 단위와 표본</h3><p>방법 절: 웹 153 · 트위터 197 주제<br>여러 결과 표: 트위터 198 주제<br><b>각 표의 n을 개별적으로 유지</b></p></div><div><h3>Cohen’s κ</h3><div class="kappa">.98 <span class="small">전략</span><br>.85 <span class="small">소구</span></div><p class="note">전체의 10%로 공동 코딩 훈련</p></div></div>`,
     '이후 차트의 ‘건’과 n은 <em>코딩된 주제·메시지 단위</em>이며 게시글 수가 아니다.'));
   const allWeb=D.table5_web_all, allTw=D.table6_twitter_all;
   html.push(slide(9,'08 / 관찰 결과 · RQ1','두 매체 모두 ‘공격성 감소’가 가장 많았다','각 매체 전체 분포 · 웹페이지와 트위터의 수집 기간은 서로 다름',`
@@ -91,28 +95,44 @@
     <div class="tweet-link"><div class="message-sheet"><div class="label">직접 메시지 · 트위터 본문</div><h3>짧은 첫 접점</h3><p>부인 4.1% · 책임성 회피 2.5%</p></div><div class="arrow">→</div><div class="message-sheet"><div class="label">클릭 이후 · 링크 내부</div><h3>상세한 입장 설명</h3><p>부인 <b class="orange">15.8%</b> · 책임성 회피 <b class="orange">11.8%</b></p></div></div>
     ${legend(cats,strategyColors)}${stack('트위터 본문',122,link.text.pct,cats,strategyColors)}${stack('링크 내부',76,link.link.pct,cats,strategyColors)}${scale()}
     ${table(['구분','전략 부재','부인','책임성 회피','공격성 감소','수정행위'],[['본문 · 건',...link.text.counts],['링크 · 건',...link.link.counts]],'compact')}
-    <div class="link-totals" style="margin-top:20px"><span>χ²(4) = 31.69, p &lt; .001</span><span>수정행위: 본문 0% / 링크 1.3%</span></div><p class="note">표시 비율은 원문 값. 반올림으로 링크 비율 합은 99.9%다. 실제 링크 클릭·수용은 측정하지 않았다.</p>`,
+    <div class="link-totals" style="margin-top:20px"><span>χ²(4) = 31.69, p &lt; .001</span><span>수정행위: 본문 0% / 링크 1.3%</span></div><p class="note">실제 링크 클릭·수용 효과는 측정하지 않았다.</p>`,
     '<em>저자 해석</em> · 링크 메시지는 직접 트윗보다 웹페이지적인 성격을 나타낸다.'));
   const appeal=D.table9_appeal_web_twitter, appealLink=D.table10_appeal_twitter_text_link;
-  html.push(slide(12,'11 / 관찰 결과 · RQ3','웹페이지는 이성, 트위터 본문은 감성이 우세','서로 다른 두 비교 · 원문 표9·10',`
+  html.push(slide(12,'11 / 관찰 결과 · RQ3','웹페이지는 이성, 트위터 본문은 감성이 우세','위기 정점 이후 비교 자료 · 매체 간 비교와 트위터 내부 비교 · 표9·10',`
     ${legend(['이성적 소구','감성적 소구'],[navy,orange])}
     <div class="appeal-group"><div class="appeal-heading"><h3>RQ3-1 · 매체 간 비교</h3><span>χ²(1) = 30.68, p &lt; .001</span></div>${stack('웹페이지',52,appeal.web.pct,['이성','감성'],[navy,orange])}${stack('트위터 전체',198,appeal.twitter.pct,['이성','감성'],[navy,orange])}</div>
     <div class="appeal-group"><div class="appeal-heading"><h3>RQ3-2 · 트위터 내부 비교</h3><span>χ²(1) = 8.674, p &lt; .01</span></div>${stack('트위터 본문',122,appealLink.text.pct,['이성','감성'],[navy,orange])}${stack('링크 메시지',76,appealLink.link.pct,['이성','감성'],[navy,orange])}</div>${scale()}
-    <p class="note">표9의 웹 n=52는 전체 웹 전략 표5의 n=153과 다르다. 전체 건수·합계는 원자료 패널에 수록.</p>`,
+    <p class="note">웹 전체 전략 분석: <b>153개 주제</b> (표5) / 웹 소구유형 비교: <b>52개 주제</b> (표9)</p>`,
     '트위터 안에서도 <em>본문의 감성적 접근</em>과 <em>링크의 이성적 설명</em>은 구분된다.'));
   const cross=D.table11_strategy_by_appeal;
   html.push(slide(13,'12 / 관찰 결과 · RQ4','트위터 ‘공격성 감소 × 감성’의 강한 결합','전략별 이성·감성 건수 · 비교를 위해 두 패널 모두 0–100건 축 사용',`
     ${legend(['이성적 소구','감성적 소구'],[navy,orange])}<div class="two"><div class="chart-panel"><h3>웹페이지 · n=52 주제</h3>${grouped(['전략 부재','부인','책임 회피','공격성 감소','수정행위'],cross.web_rational,cross.web_emotional,['이성','감성'],100,false,true)}</div><div class="chart-panel"><h3>트위터 · n=198 주제</h3>${grouped(['전략 부재','부인','책임 회피','공격성 감소','수정행위'],cross.twitter_rational,cross.twitter_emotional,['이성','감성'],100,false,true)}</div></div>
     <div class="cross-focus"><span class="big"><span class="orange">97</span> <small>감성</small> / 36 <small>이성</small></span><p>트위터의 공격성 감소 133건 중 감성 97건<br><b>72.9%</b> = 97/133 · 별도 계산한 파생 지표</p></div><p class="note">원문 표11의 86.6%는 ‘트위터 감성 112건 중 공격성 감소 97건’의 비중이다. 분모가 다르다.</p>`,
-    '대부분의 전략에서는 이성 소구가 우세하나, <em>트위터의 공격성 감소에서는 감성 소구가 두드러졌다.</em>'));
-  html.push(slide(14,'13 / 해석과 함의','매체와 위기 맥락을 고려한 메시지 조합','관찰된 차이, 논문 저자의 해석, 발제자의 비평을 구분',`
-    <div class="interpret"><div class="interpret-column"><div class="label">01 · 관찰 결과</div><h3>서로 다른 메시지 분포</h3><p><b>웹페이지</b><br>부인·책임 회피가 상대적으로 많고 이성적 소구가 우세</p><p><b>트위터</b><br>공격성 감소·감성적 소구가 상대적으로 두드러짐</p><p><b>링크</b><br>상세한 설명과 방어 논리를 연결</p></div><div class="interpret-column"><div class="label">02 · 논문 저자의 해석</div><h3>매체 특성 + 정책 맥락</h3><p>철회하기 어려운 공공정책에서 사과·수정 등 전면 수용 전략은 제한적</p><p>공식 정보 제공 중심의 웹페이지와 즉시적 상호작용·확산 중심의 트위터가 다른 메시지와 결합</p><p>링크는 단문의 제약을 보완하는 통로</p></div><div class="interpret-column"><div class="label">03 · 원문의 실무 제언</div><h3>차별화 · 균형 · 관계</h3><p><b>차별화</b><br>채널의 목적에 맞는 전략·소구 조합</p><p><b>균형</b><br>링크로 논거를 연결하되 간접 노출의 한계 고려</p><p><b>위기 이전 관계관리</b><br>평상시 상호작용과 신뢰 구축</p></div></div>
-    <div class="caution"><b>발제자 비평</b> · 매체와 전략의 연관성은 관찰했지만 매체 자체의 인과효과는 확정할 수 없다.<br>‘상대적 공중 순응’이 실제 의견 수렴이나 정책 수정이 이루어졌음을 입증하지는 않는다.</div>`,
-    '‘SNS는 감성, 웹은 이성’이라는 절대 규칙보다 <em>목적과 맥락에 맞는 조합</em>이 핵심이다.'));
-  html.push(slide(15,'14 / 결론과 토론','메시지는 달랐다.<br>이미지는 실제로 회복되었는가?','',`
+    '트위터는 대부분의 전략에서 이성이 우세하지만, <em>공격성 감소는 감성 97건 대 이성 36건</em>이다.'));
+  html.push(slide(14,'13 / 해석과 함의','수사적 완화와 실질적 공중 수용의 구별','관찰 결과 / 연구자 해석 / 발제자 비평',`
+    <div class="interpret"><div class="interpret-column"><div class="label">01 · 관찰 결과</div><h3>매체별 분포 차이</h3>
+      <p><b>웹페이지</b><br>부인·책임 회피가 상대적으로 많고 이성적 소구가 우세</p>
+      <p><b>트위터</b><br>공격성 감소·감성적 소구가 상대적으로 두드러짐</p>
+      <p><b>링크 내부</b><br>상대적으로 이성적·방어적인 메시지</p></div>
+    <div class="interpret-column"><div class="label">02 · 연구자의 해석</div><h3>상대적 공중 순응</h3>
+      <p>저자는 트위터가 웹페이지보다 <b>상대적으로 공중 순응적</b>이었다고 해석했다.</p>
+      <p>정책 철회의 어려움, 웹의 공식 정보 제공, 트위터의 상호작용·확산 특성으로 분포 차이를 설명했다.</p>
+      <p>링크는 단문의 제약을 보완하는 통로로 해석했다.</p></div>
+    <div class="interpret-column"><div class="label">03 · 발제자의 비평</div><h3>수사 ≠ 정책·행동 변화</h3>
+      <p><b>공격성 감소</b><br>부정적 평가·비난을 완화하는 수사.<br>비난자 공격·최소화·초월 등<br><b>조직 옹호적 하위 전략도 포함</b></p>
+      <p><b>실질적 공중 수용</b><br>공중의 요구를 받아들여<br>정책이나 행동을 변경하는 것</p>
+      </div></div>
+    <div class="caution"><b>원문의 실무 제언</b> · 매체별 차별화 / 링크를 통한 균형 / 위기 이전 관계관리<br><b>인과 추론의 경계</b> · 매체와 전략의 연관성이 매체 자체의 인과효과를 확정하지는 않는다.</div>`,
+    '공격성 감소의 높은 비중을 <em>실제 주민 요구의 수용이나 정책 변화</em>로 해석해서는 안 된다.'));
+  html.push(slide(15,'14 / 결론과 연구의 한계','매체별 메시지의 차이와 남은 질문','관찰한 것은 전략·소구의 분포 차이이며, 이미지 회복 효과는 직접 검증하지 않았다.',`
     <div class="conclusions"><div><span>01 · 웹페이지</span><p>부인·책임 회피와 이성적 소구가 상대적으로 많이 관찰됐다.</p></div><div><span>02 · 트위터와 링크</span><p>트위터는 공격성 감소·감성적 소구, 링크는 상대적으로 이성적·방어적인 메시지가 두드러졌다.</p></div><div><span>03 · 메시지 조합</span><p>위기 커뮤니케이션은 매체에 따른 전략과 소구 방식의 조합을 고려해야 한다.</p></div></div>
-    <div class="limitations"><b>원문의 한계</b><span>① 단일 사례 · 일반화 제한</span><span>② 텍스트만 분석 · 이미지·영상 제외</span><span>③ 공중의 인지·태도·행동 효과 미검증</span></div>
-    <div class="questions"><p><b>Q1 · 실제 수용의 문제</b>SNS에서 상대적으로 순응적인 메시지를 쓴 것이 공중의 실제 요구를 받아들였음을 의미할까?</p><p><b>Q2 · 인과 추론의 문제</b>매체별 메시지가 달랐다는 관찰만으로 매체 특성이 그 차이를 만들었다고 말할 수 있을까?</p></div>`,
-    '어떤 전략을 썼는지는 설명했지만, <em>얼마나 성공했는지는 후속 연구의 질문</em>으로 남는다.','closing'));
+    <div class="limit-columns"><div><h3>단일 사례</h3><p>해군·제주 해군기지 사례로<br>일반화의 범위가 제한된다.</p></div><div><h3>텍스트 중심 분석</h3><p>이미지·영상의 메시지는<br>분석에 포함하지 않았다.</p></div><div><h3>수용자 효과 미검증</h3><p>인지·태도·행동 변화와<br>실제 이미지 회복을 검증하지 않았다.</p></div></div>`,
+    '메시지는 달랐다. <em>이미지는 실제로 회복되었는가?</em>','closing'));
+  html.push(slide(16,'15 / 응용 토론 · 논문의 실증 결과와 구별','매체의 특성에 따른 이미지 회복 전략','사례 · 2030 부산 엑스포 유치 실패',`
+    <p class="expo-context">2023년 부산은 2030 세계박람회 유치에 실패했다. 낙관적 전망과 달리 큰 표 차로 탈락하면서<br>유치 전략과 기대 관리에 대한 책임론이 제기되었다. <b>부산 29표 · 리야드 119표</b></p>
+    <div class="expo-role"><b>상황 설정</b> · 여러분은 유치 실패 직후 <b>부산시 위기관리 PR팀</b>이다.<br>부산시의 책임 범위와 통제하기 어려웠던 요인을 구분하며, 시민 신뢰를 회복할 전략을 수립하시오.</div>
+    <div class="discussion-columns"><div class="rule-top"><div class="label">토론 1</div><h3>매체 2개 선정<br>및 특성 분석</h3><p>위기 대응에 적합한 <b>매체 2개</b>를 선정하고, 각 매체의 <b>특성과 선정 이유</b>를 논의하시오.</p></div>
+    <div class="rule-top orange-rule"><div class="label">토론 2</div><h3>베노이트의 이미지 회복<br>전략 수립</h3><p>매체에 따라 <b>전략 자체</b>를 달리할 것인가?<br>동일한 전략 아래 <b>형식·소구유형</b>만 달리할 것인가?</p><p>선택 근거와 <b>매체별 핵심 메시지</b>를 제시하시오.</p></div></div>`,
+    '매체의 선택, 전략의 선택, 표현의 선택을 구분해 <em>시민의 신뢰를 회복할 방안</em>을 논의한다.','discussion'));
   document.getElementById('stage').innerHTML=html.join('');
 })();
